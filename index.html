@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adriel Teles | Portfólio</title>
+  <meta name="description" content="Portfólio de Adriel Teles, profissional de TI com foco em suporte, infraestrutura, monitoramento e Segurança da Informação.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===================== MENU PRINCIPAL =====================
+       Menu fixo, visível em todas as seções, com navegação por âncoras
+       (não usa o botão "voltar" do navegador). -->
+  <header class="header">
+    <nav class="nav" aria-label="Navegação principal">
+      <a href="#topo" class="nav__brand">
+        <span class="nav__brand-icon">◈</span> Adriel Teles
+      </a>
+
+      <!-- Botão do menu responsivo (hambúrguer), controlado via JavaScript -->
+      <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav__links" id="navLinks">
+        <li><a href="#sobre" class="nav__link">01 · Sobre mim</a></li>
+        <li><a href="#formacao" class="nav__link">02 · Formação</a></li>
+        <li><a href="#portfolio" class="nav__link">03 · Portfólio</a></li>
+        <li><a href="#contato" class="nav__link">04 · Contato</a></li>
+      </ul>
+
+      <!-- Botão de alternância de tema claro/escuro -->
+      <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema claro/escuro" title="Alternar tema">
+        <span id="themeIcon">☾</span>
+      </button>
+    </nav>
+  </header>
+
+  <main id="topo">
+
+    <!-- ===================== HERO ===================== -->
+    <section class="hero">
+      <div class="hero__grid" aria-hidden="true"></div>
+      <div class="container hero__content">
+        <p class="eyebrow">// portfólio pessoal</p>
+        <h1 class="hero__title">Adriel Teles<span class="accent">.</span></h1>
+        <p class="hero__subtitle">
+          Profissional de TI com foco em <strong>suporte, infraestrutura, monitoramento e Segurança da Informação</strong>.
+        </p>
+        <div class="hero__actions">
+          <a href="#portfolio" class="btn btn--primary">Ver projetos</a>
+          <a href="#contato" class="btn btn--ghost">Falar comigo</a>
+        </div>
+        <div class="hero__links" aria-label="Perfis profissionais">
+          <a href="https://github.com/adriel-teles" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <span aria-hidden="true">•</span>
+          <a href="https://www.linkedin.com/in/adriel-teles19" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 01 · SOBRE MIM ===================== -->
+    <section id="sobre" class="section">
+      <div class="container">
+        <p class="section__eyebrow">01</p>
+        <h2 class="section__title">Sobre mim</h2>
+
+        <div class="about">
+          <div class="about__text">
+            <p>
+              Profissional de Tecnologia da Informação com sólida experiência em suporte técnico,
+              administração de sistemas corporativos, redes e monitoramento de infraestrutura. Focado
+              em soluções práticas, automação de processos e segurança da informação, com vivência na
+              implementação de dashboards de observabilidade e gerenciamento de ambientes Linux e Docker.
+            </p>
+            <h3 class="about__subheading">Interesses &amp; objetivos</h3>
+            <ul class="about__list">
+              <li>Cibersegurança defensiva (Blue Team) e análise de vulnerabilidades</li>
+              <li>Observabilidade, engenharia de confiabilidade e infraestrutura como código</li>
+              <li>Automação de processos de TI com Python e integração de ferramentas open-source</li>
+            </ul>
+          </div>
+
+          <!-- Painel lateral com um resumo das principais tecnologias. -->
+          <aside class="panel" aria-label="Competências técnicas">
+            <p class="panel__title">COMPETÊNCIAS TÉCNICAS</p>
+            <ul class="panel__list">
+              <li><span class="dot dot--ok"></span> Linux, Windows Server e Docker</li>
+              <li><span class="dot dot--ok"></span> Cisco, UniFi e FortiGate</li>
+              <li><span class="dot dot--ok"></span> Zabbix, Grafana e Wazuh</li>
+              <li><span class="dot dot--ok"></span> Python, Firebase, Git e GitHub</li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 02 · FORMAÇÃO ===================== -->
+    <section id="formacao" class="section section--alt">
+      <div class="container">
+        <p class="section__eyebrow">02</p>
+        <h2 class="section__title">Formação</h2>
+
+        <!-- Linha do tempo para apresentar a trajetória educacional. -->
+        <ol class="timeline">
+          <li class="timeline__item">
+            <span class="timeline__marker"></span>
+            <div class="timeline__content">
+              <p class="timeline__date">Em andamento</p>
+              <h3 class="timeline__title">Graduação em Segurança da Informação - UNINTER</h3>
+              <p class="timeline__desc">
+                Graduação em andamento, com formação voltada para proteção de sistemas, redes e dados.
+              </p>
+            </div>
+          </li>
+          <li class="timeline__item">
+            <span class="timeline__marker"></span>
+            <div class="timeline__content">
+              <p class="timeline__date">Formação complementar</p>
+              <h3 class="timeline__title">Monitoramento, SIEM e Redes</h3>
+              <p class="timeline__desc">
+                Monitoramento de redes com Zabbix e Grafana, SIEM e análise de logs com Wazuh,
+                além de redes e firewalls com FortiGate e UniFi.
+              </p>
+            </div>
+          </li>
+        </ol>
+
+      </div>
+    </section>
+
+    <!-- ===================== 03 · PORTFÓLIO ===================== -->
+    <section id="portfolio" class="section">
+      <div class="container">
+        <p class="section__eyebrow">03</p>
+        <h2 class="section__title">Portfólio</h2>
+        <p class="section__intro">Projetos voltados a monitoramento, automação e desenvolvimento web.</p>
+
+        <div class="cards">
+          <article class="card">
+            <p class="card__tag">Monitoramento</p>
+            <h3 class="card__title">Monitoramento com Zabbix, Grafana e Wazuh</h3>
+            <p class="card__desc">
+              Ambiente centralizado para acompanhar, em tempo real, métricas críticas de CPU, memória,
+              latência, switches e links de rede.
+            </p>
+            <a href="https://www.linkedin.com/in/adriel-teles19" class="card__link" target="_blank" rel="noopener noreferrer">Ver no LinkedIn →</a>
+          </article>
+
+          <article class="card">
+            <p class="card__tag">Desenvolvimento web</p>
+            <h3 class="card__title">Modo Realidade</h3>
+            <p class="card__desc">
+              Projeto web interativo focado em conscientização e impacto social, com design imersivo e
+              lógica front-end estruturada.
+            </p>
+            <a href="https://github.com/adriel-teles/modo-realidade" class="card__link" target="_blank" rel="noopener noreferrer">Ver no GitHub →</a>
+          </article>
+
+          <article class="card">
+            <p class="card__tag">Automação</p>
+            <h3 class="card__title">Scripts de automação e Homelab</h3>
+            <p class="card__desc">
+              Scripts em Python para automatizar rotinas de TI e ambiente homelab para testar serviços
+              containerizados com Docker e práticas de segurança.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 04 · CONTATO ===================== -->
+    <section id="contato" class="section section--alt">
+      <div class="container">
+        <p class="section__eyebrow">04</p>
+        <h2 class="section__title">Contato</h2>
+        <p class="section__intro">Preencha o formulário abaixo para entrar em contato.</p>
+
+        <form id="contactForm" class="form" novalidate>
+          <div class="form__group">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" placeholder="Seu nome completo" autocomplete="name" aria-describedby="erroNome">
+            <span class="form__error" id="erroNome" aria-live="polite"></span>
+          </div>
+
+          <div class="form__group">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" placeholder="usuario@dominio.com" autocomplete="email" aria-describedby="erroEmail">
+            <span class="form__error" id="erroEmail" aria-live="polite"></span>
+          </div>
+
+          <div class="form__group">
+            <label for="mensagem">Mensagem</label>
+            <textarea id="mensagem" name="mensagem" rows="5" placeholder="Escreva sua mensagem" aria-describedby="erroMensagem"></textarea>
+            <span class="form__error" id="erroMensagem" aria-live="polite"></span>
+          </div>
+
+          <button type="submit" class="btn btn--primary">Enviar mensagem</button>
+
+          <!-- Área onde a mensagem de sucesso/erro é exibida via JS -->
+          <p class="form__status" id="formStatus" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__content">
+      <p>© <span id="anoAtual"></span> Adriel — Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
