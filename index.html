@@ -5,29 +5,79 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Adriel Teles | Portfólio</title>
   <meta name="description" content="Portfólio de Adriel Teles, profissional de TI com foco em suporte, infraestrutura, monitoramento e Segurança da Informação.">
+  
+  <!-- Google Fonts: Cinzel (Vitoriano Clássico), Fira Code (Terminal Mono), Inter (Sans-serif) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Fira+Code:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Estilos principais -->
   <link rel="stylesheet" href="style.css">
+
+  <!-- Three.js via CDN para o elemento 3D do Globo no Hero -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
 </head>
 <body>
 
-  <!-- ===================== MENU PRINCIPAL =====================
-       Menu fixo, visível em todas as seções, com navegação por âncoras
-       (não usa o botão "voltar" do navegador). -->
+  <!-- ===================== STATUS BAR NOC (PAINEL SUPERIOR) ===================== -->
+  <div class="statusbar" aria-label="Status do sistema NOC">
+    <div class="statusbar__item">
+      <span class="status-indicator"></span>
+      <span class="statusbar__key">SYSTEM:</span> <span class="statusbar__val accent-green">ONLINE</span>
+    </div>
+    <div class="statusbar__item statusbar__item--hide-mobile">
+      <span class="statusbar__key">LATENCY:</span> <span class="statusbar__val">12ms</span>
+    </div>
+    <div class="statusbar__item statusbar__item--hide-mobile">
+      <span class="statusbar__key">SIEM:</span> <span class="statusbar__val accent-amber">ACTIVE</span>
+    </div>
+    <div class="statusbar__item">
+      <span class="statusbar__key">DEFENSE:</span> <span class="statusbar__val accent-gold">SHIELD_OK</span>
+    </div>
+  </div>
+
+  <!-- ===================== MENU PRINCIPAL ===================== -->
   <header class="header">
     <nav class="nav" aria-label="Navegação principal">
-      <a href="#topo" class="nav__brand">
-        <span class="nav__brand-icon">◈</span> Adriel Teles
+      <!-- Logo Vitoriano-Cyberpunk em Dourado com monograma AT -->
+      <a href="#topo" class="nav__brand" aria-label="Adriel Teles - Início">
+        <svg class="victorian-logo" viewBox="0 0 100 100" width="36" height="36" aria-hidden="true">
+          <defs>
+            <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#FFF3C4"/>
+              <stop offset="35%" stop-color="#F5D77F"/>
+              <stop offset="70%" stop-color="#D4AF37"/>
+              <stop offset="100%" stop-color="#997517"/>
+            </linearGradient>
+          </defs>
+          <!-- Moldura Vitoriana & Nó de Circuito -->
+          <polygon points="50,4 92,26 92,74 50,96 8,74 8,26" fill="none" stroke="url(#goldGrad)" stroke-width="2" opacity="0.6"/>
+          <path d="M 50 10 L 84 29 L 84 71 L 50 90 L 16 71 L 16 29 Z" fill="none" stroke="url(#goldGrad)" stroke-width="1" stroke-dasharray="4,2"/>
+          <circle cx="50" cy="50" r="32" fill="none" stroke="url(#goldGrad)" stroke-width="1.5"/>
+          <!-- Detalhes Vitorianos Ornamentados -->
+          <path d="M 50 18 C 40 24 30 24 24 34 M 50 18 C 60 24 70 24 76 34" fill="none" stroke="url(#goldGrad)" stroke-width="1.5"/>
+          <path d="M 50 82 C 40 76 30 76 24 66 M 50 82 C 60 76 70 76 76 66" fill="none" stroke="url(#goldGrad)" stroke-width="1.5"/>
+          <!-- Monograma AT -->
+          <text x="50" y="58" font-family="'Cinzel', serif" font-size="24" font-weight="800" fill="url(#goldGrad)" text-anchor="middle" letter-spacing="-1">AT</text>
+          <!-- Pontos de Nó Cyberpunk -->
+          <circle cx="50" cy="10" r="2" fill="url(#goldGrad)"/>
+          <circle cx="50" cy="90" r="2" fill="url(#goldGrad)"/>
+          <circle cx="16" cy="29" r="2" fill="url(#goldGrad)"/>
+          <circle cx="84" cy="29" r="2" fill="url(#goldGrad)"/>
+        </svg>
+        <span class="nav__brand-text">Adriel Teles</span>
       </a>
 
-      <!-- Botão do menu responsivo (hambúrguer), controlado via JavaScript -->
+      <!-- Botão do menu responsivo (hambúrguer) -->
       <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Abrir menu">
         <span></span><span></span><span></span>
       </button>
 
       <ul class="nav__links" id="navLinks">
-        <li><a href="#sobre" class="nav__link">01 · Sobre mim</a></li>
-        <li><a href="#formacao" class="nav__link">02 · Formação</a></li>
-        <li><a href="#portfolio" class="nav__link">03 · Portfólio</a></li>
-        <li><a href="#contato" class="nav__link">04 · Contato</a></li>
+        <li><a href="#sobre" class="nav__link"><span class="nav__num">01</span> Sobre mim</a></li>
+        <li><a href="#formacao" class="nav__link"><span class="nav__num">02</span> Formação</a></li>
+        <li><a href="#portfolio" class="nav__link"><span class="nav__num">03</span> Portfólio</a></li>
+        <li><a href="#contato" class="nav__link"><span class="nav__num">04</span> Contato</a></li>
       </ul>
 
       <!-- Botão de alternância de tema claro/escuro -->
@@ -41,24 +91,51 @@
 
     <!-- ===================== HERO ===================== -->
     <section class="hero">
+      <!-- Container do Globo 3D (Three.js Render Canvas) -->
+      <div class="hero__globe-container" id="heroGlobe" aria-hidden="true"></div>
+      
+      <!-- Overlays de Textura e Grid Topológico -->
       <div class="hero__grid" aria-hidden="true"></div>
-      <div class="container hero__content">
-        <p class="eyebrow">// portfólio pessoal</p>
-        <h1 class="hero__title">Adriel Teles<span class="accent">.</span></h1>
-        <p class="hero__subtitle">
-          Profissional de TI com foco em <strong>suporte, infraestrutura, monitoramento e Segurança da Informação</strong>.
-        </p>
-        <div class="hero__actions">
-          <a href="#portfolio" class="btn btn--primary">Ver projetos</a>
-          <a href="#contato" class="btn btn--ghost">Falar comigo</a>
-        </div>
-        <div class="hero__links" aria-label="Perfis profissionais">
-          <a href="https://github.com/adriel-teles" target="_blank" rel="noopener noreferrer">GitHub</a>
-          <span aria-hidden="true">•</span>
-          <a href="https://www.linkedin.com/in/adriel-teles19" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <div class="hero__halftone-overlay" aria-hidden="true"></div>
+
+      <div class="container">
+        <div class="hero__content">
+          <div class="hero__badge">
+            <span class="status-dot"></span>
+            <span class="status-text">LIVE MONITORING // NOC ACTIVE</span>
+          </div>
+
+          <p class="eyebrow">// portfólio pessoal</p>
+          <h1 class="hero__title">Adriel Teles<span class="accent">.</span></h1>
+          
+          <p class="hero__subtitle" id="heroSubtitle">
+            Profissional de TI com foco em <strong>suporte, infraestrutura, monitoramento e Segurança da Informação</strong>.
+          </p>
+
+          <div class="hero__actions">
+            <a href="#portfolio" class="btn btn--primary">Ver projetos</a>
+            <a href="#contato" class="btn btn--ghost">Falar comigo</a>
+          </div>
+
+          <div class="hero__links" aria-label="Perfis profissionais">
+            <a href="https://github.com/adriel-teles" target="_blank" rel="noopener noreferrer" class="link-cyber">
+              <span class="link-icon">⚡</span> GitHub
+            </a>
+            <span aria-hidden="true" class="hero__divider">•</span>
+            <a href="https://www.linkedin.com/in/adriel-teles19" target="_blank" rel="noopener noreferrer" class="link-cyber">
+              <span class="link-icon">🛡️</span> LinkedIn
+            </a>
+          </div>
         </div>
       </div>
     </section>
+
+    <!-- ===================== DIVISOR VITORIANO / HALFTONE ===================== -->
+    <div class="section-divider" aria-hidden="true">
+      <div class="victorian-crest-divider">
+        <span>❖</span> 📜 <span>❖</span>
+      </div>
+    </div>
 
     <!-- ===================== 01 · SOBRE MIM ===================== -->
     <section id="sobre" class="section">
@@ -82,15 +159,23 @@
             </ul>
           </div>
 
-          <!-- Painel lateral com um resumo das principais tecnologias. -->
+          <!-- Painel lateral com um resumo das principais tecnologias -->
           <aside class="panel" aria-label="Competências técnicas">
-            <p class="panel__title">COMPETÊNCIAS TÉCNICAS</p>
+            <div class="panel__header">
+              <span class="panel__victorian-corner tl"></span>
+              <span class="panel__victorian-corner tr"></span>
+              <p class="panel__title">COMPETÊNCIAS TÉCNICAS</p>
+            </div>
             <ul class="panel__list">
               <li><span class="dot dot--ok"></span> Linux, Windows Server e Docker</li>
               <li><span class="dot dot--ok"></span> Cisco, UniFi e FortiGate</li>
               <li><span class="dot dot--ok"></span> Zabbix, Grafana e Wazuh</li>
               <li><span class="dot dot--ok"></span> Python, Firebase, Git e GitHub</li>
             </ul>
+            <div class="panel__footer">
+              <span class="panel__victorian-corner bl"></span>
+              <span class="panel__victorian-corner br"></span>
+            </div>
           </aside>
         </div>
       </div>
@@ -102,7 +187,7 @@
         <p class="section__eyebrow">02</p>
         <h2 class="section__title">Formação</h2>
 
-        <!-- Linha do tempo para apresentar a trajetória educacional. -->
+        <!-- Linha do tempo para apresentar a trajetória educacional -->
         <ol class="timeline">
           <li class="timeline__item">
             <span class="timeline__marker"></span>
@@ -139,6 +224,7 @@
 
         <div class="cards">
           <article class="card">
+            <div class="card__scanline"></div>
             <p class="card__tag">Monitoramento</p>
             <h3 class="card__title">Monitoramento com Zabbix, Grafana e Wazuh</h3>
             <p class="card__desc">
@@ -149,6 +235,7 @@
           </article>
 
           <article class="card">
+            <div class="card__scanline"></div>
             <p class="card__tag">Desenvolvimento web</p>
             <h3 class="card__title">Modo Realidade</h3>
             <p class="card__desc">
@@ -159,6 +246,7 @@
           </article>
 
           <article class="card">
+            <div class="card__scanline"></div>
             <p class="card__tag">Automação</p>
             <h3 class="card__title">Scripts de automação e Homelab</h3>
             <p class="card__desc">
